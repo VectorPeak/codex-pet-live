@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "role_name": "jige-kunkun",
+  "display_name": "鸡哥（坤坤）",
+  "source": {
+    "input_dir": "D:\\ZXY\\Codex\\DyberPet\\build\\codex-pets-downloads\\jige-kunkun",
+    "pet_json": "D:\\ZXY\\Codex\\DyberPet\\build\\codex-pets-downloads\\jige-kunkun\\pet.json",
+    "spritesheet": "D:\\ZXY\\Codex\\DyberPet\\build\\codex-pets-downloads\\jige-kunkun\\spritesheet.webp"
+  },
+  "output_dir": "D:\\ZXY\\Codex\\DyberPet\\res\\role\\jige-kunkun",
+  "cell_size": [
+    192,
+    208
+  ],
+  "atlas_size": [
+    1536,
+    1872
+  ],
+  "frame_counts": {
+    "stand": 6,
+    "rightwalk": 8,
+    "leftwalk": 8,
+    "wave": 4,
+    "jump": 5,
+    "failed": 8,
+    "waiting": 6,
+    "focus": 6,
+    "review": 6
+  }
+}

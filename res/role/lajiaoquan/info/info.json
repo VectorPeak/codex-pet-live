@@ -1,0 +1,18 @@
+{
+  "petName": "辣椒圈",
+  "intro": "A slim animated chibi pet inspired by the reference photos, with a soft chestnut bob, a smaller detailed face, and a gentle playful presence.",
+  "coverImages": [
+    "pfp.png"
+  ],
+  "author": {
+    "name": "Codex hatch-pet",
+    "pfp": "pfp.png",
+    "frameColor": "#4f91ff",
+    "infos": "Converted from a Codex hatch-pet package.",
+    "links": {}
+  },
+  "tages": {
+    "Codex": "#b7df8a",
+    "Converted": "#9fd3ff"
+  }
+}

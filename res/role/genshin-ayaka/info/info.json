@@ -1,0 +1,18 @@
+{
+  "petName": "Ayaka 神里绫华",
+  "intro": "一款完全基于《原神》中神里绫华形象设计的精美手办，被重新塑造为一款高品质的半写实风格收藏级人偶伴侣，具有极高的身份辨识度、优雅的冰蓝色调、精致的和服盔甲细节以及优雅的贵族气质，同时保持小巧便携且便于动画制作。",
+  "coverImages": [
+    "pfp.png"
+  ],
+  "author": {
+    "name": "Codex hatch-pet",
+    "pfp": "pfp.png",
+    "frameColor": "#4f91ff",
+    "infos": "Converted from a Codex hatch-pet package.",
+    "links": {}
+  },
+  "tages": {
+    "Codex": "#b7df8a",
+    "Converted": "#9fd3ff"
+  }
+}

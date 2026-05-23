@@ -1,0 +1,63 @@
+{
+  "default": {
+    "images": "stand",
+    "act_num": 1,
+    "frame_refresh": 0.16
+  },
+  "left_walk": {
+    "images": "leftwalk",
+    "act_num": 2,
+    "need_move": true,
+    "direction": "left",
+    "frame_move": 8,
+    "frame_refresh": 0.12
+  },
+  "right_walk": {
+    "images": "rightwalk",
+    "act_num": 2,
+    "need_move": true,
+    "direction": "right",
+    "frame_move": 8,
+    "frame_refresh": 0.12
+  },
+  "drag": {
+    "images": "stand",
+    "act_num": 1,
+    "frame_refresh": 0.16
+  },
+  "fall": {
+    "images": "jump",
+    "act_num": 1,
+    "frame_refresh": 0.14
+  },
+  "onfloor": {
+    "images": "failed",
+    "act_num": 1,
+    "frame_refresh": 0.16
+  },
+  "patpat": {
+    "images": "wave",
+    "act_num": 1,
+    "frame_refresh": 0.14
+  },
+  "waiting": {
+    "images": "waiting",
+    "act_num": 1,
+    "frame_refresh": 0.15
+  },
+  "focus": {
+    "images": "focus",
+    "act_num": 1,
+    "frame_refresh": 0.12
+  },
+  "review": {
+    "images": "review",
+    "act_num": 1,
+    "frame_refresh": 0.15
+  },
+  "failed": {
+    "images": "failed",
+    "act_num": 1,
+    "frame_refresh": 0.16
+  }
+}

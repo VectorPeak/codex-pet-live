@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "role_name": "hu-tao-1-pet",
+  "display_name": "小胡桃",
+  "source": {
+    "input_dir": "D:\\ZXY\\Codex\\DyberPet\\build\\codex-pets-downloads\\hu-tao-1-pet",
+    "pet_json": "D:\\ZXY\\Codex\\DyberPet\\build\\codex-pets-downloads\\hu-tao-1-pet\\pet.json",
+    "spritesheet": "D:\\ZXY\\Codex\\DyberPet\\build\\codex-pets-downloads\\hu-tao-1-pet\\spritesheet.webp"
+  },
+  "output_dir": "D:\\ZXY\\Codex\\DyberPet\\res\\role\\hu-tao-1-pet",
+  "cell_size": [
+    192,
+    208
+  ],
+  "atlas_size": [
+    1536,
+    1872
+  ],
+  "frame_counts": {
+    "stand": 6,
+    "rightwalk": 8,
+    "leftwalk": 8,
+    "wave": 4,
+    "jump": 5,
+    "failed": 8,
+    "waiting": 6,
+    "focus": 6,
+    "review": 6
+  }
+}

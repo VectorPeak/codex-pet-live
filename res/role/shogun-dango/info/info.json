@@ -1,0 +1,18 @@
+{
+  "petName": "将军团子",
+  "intro": "以《原神》雷电将军／雷电影（Raiden Shogun / Raiden Ei / 雷電将軍 / 雷電影）设计元素为基础的可爱Q版紫色电系小宠物。",
+  "coverImages": [
+    "pfp.png"
+  ],
+  "author": {
+    "name": "Codex hatch-pet",
+    "pfp": "pfp.png",
+    "frameColor": "#4f91ff",
+    "infos": "Converted from a Codex hatch-pet package.",
+    "links": {}
+  },
+  "tages": {
+    "Codex": "#b7df8a",
+    "Converted": "#9fd3ff"
+  }
+}

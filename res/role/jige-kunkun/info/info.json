@@ -1,0 +1,18 @@
+{
+  "petName": "鸡哥（坤坤）",
+  "intro": "一个篮球主题的圆润黄色小鸡 Codex 宠物，昵称鸡哥（坤坤）。",
+  "coverImages": [
+    "pfp.png"
+  ],
+  "author": {
+    "name": "Codex hatch-pet",
+    "pfp": "pfp.png",
+    "frameColor": "#4f91ff",
+    "infos": "Converted from a Codex hatch-pet package.",
+    "links": {}
+  },
+  "tages": {
+    "Codex": "#b7df8a",
+    "Converted": "#9fd3ff"
+  }
+}

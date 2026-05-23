@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "role_name": "genshin-ayaka",
+  "display_name": "Ayaka 神里绫华",
+  "source": {
+    "input_dir": "D:\\ZXY\\Codex\\DyberPet\\build\\codex-pets-downloads\\genshin-ayaka",
+    "pet_json": "D:\\ZXY\\Codex\\DyberPet\\build\\codex-pets-downloads\\genshin-ayaka\\pet.json",
+    "spritesheet": "D:\\ZXY\\Codex\\DyberPet\\build\\codex-pets-downloads\\genshin-ayaka\\spritesheet.webp"
+  },
+  "output_dir": "D:\\ZXY\\Codex\\DyberPet\\res\\role\\genshin-ayaka",
+  "cell_size": [
+    192,
+    208
+  ],
+  "atlas_size": [
+    1536,
+    1872
+  ],
+  "frame_counts": {
+    "stand": 6,
+    "rightwalk": 8,
+    "leftwalk": 8,
+    "wave": 4,
+    "jump": 5,
+    "failed": 8,
+    "waiting": 6,
+    "focus": 6,
+    "review": 6
+  }
+}

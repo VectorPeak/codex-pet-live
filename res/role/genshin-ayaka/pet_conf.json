@@ -1,0 +1,102 @@
+{
+  "width": 192,
+  "height": 208,
+  "scale": 0.75,
+  "refresh": 5,
+  "interact_speed": 0.02,
+  "default": "default",
+  "up": "default",
+  "down": "default",
+  "left": "left_walk",
+  "right": "right_walk",
+  "drag": "drag",
+  "fall": "fall",
+  "on_floor": "onfloor",
+  "focus": "focus",
+  "patpat": "patpat",
+  "random_act": [
+    {
+      "name": "Stand",
+      "act_list": [
+        "default"
+      ],
+      "act_prob": 1.0,
+      "act_type": [
+        2,
+        0
+      ]
+    },
+    {
+      "name": "Walk",
+      "act_list": [
+        "left_walk",
+        "right_walk",
+        "default"
+      ],
+      "act_prob": 0.25,
+      "act_type": [
+        2,
+        0
+      ]
+    },
+    {
+      "name": "Wave",
+      "act_list": [
+        "patpat"
+      ],
+      "act_prob": 0.2,
+      "act_type": [
+        2,
+        0
+      ]
+    },
+    {
+      "name": "Waiting",
+      "act_list": [
+        "waiting"
+      ],
+      "act_prob": 0.1,
+      "act_type": [
+        2,
+        0
+      ]
+    },
+    {
+      "name": "Focus",
+      "act_list": [
+        "focus"
+      ],
+      "act_prob": 0.1,
+      "act_type": [
+        2,
+        0
+      ]
+    },
+    {
+      "name": "Review",
+      "act_list": [
+        "review"
+      ],
+      "act_prob": 0.1,
+      "act_type": [
+        2,
+        0
+      ]
+    },
+    {
+      "name": "onfloor",
+      "act_list": [
+        "onfloor"
+      ],
+      "act_prob": 0,
+      "act_type": [
+        0,
+        10000
+      ]
+    }
+  ],
+  "metadata": {
+    "display_name": "Ayaka 神里绫华",
+    "source": "codex-hatch-pet"
+  }
+}

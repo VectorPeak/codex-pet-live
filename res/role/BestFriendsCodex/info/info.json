@@ -1,0 +1,18 @@
+{
+  "petName": "最好的朋友",
+  "intro": "两只形影不离的猫朋友，一只白底三花、一只棕灰虎斑，总是一起陪伴 Codex。.",
+  "coverImages": [
+    "pfp.png"
+  ],
+  "author": {
+    "name": "Codex hatch-pet",
+    "pfp": "pfp.png",
+    "frameColor": "#4f91ff",
+    "infos": "Converted from a Codex hatch-pet package.",
+    "links": {}
+  },
+  "tages": {
+    "Codex": "#b7df8a",
+    "Converted": "#9fd3ff"
+  }
+}

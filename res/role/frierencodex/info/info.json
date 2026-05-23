@@ -1,0 +1,18 @@
+{
+  "petName": "FrierenCodex",
+  "intro": "Q版芙莉莲风格的冷静工程师宠物，带一本无字法典与终端工具气质。",
+  "coverImages": [
+    "pfp.png"
+  ],
+  "author": {
+    "name": "Codex hatch-pet",
+    "pfp": "pfp.png",
+    "frameColor": "#4f91ff",
+    "infos": "Converted from a Codex hatch-pet package.",
+    "links": {}
+  },
+  "tages": {
+    "Codex": "#b7df8a",
+    "Converted": "#9fd3ff"
+  }
+}

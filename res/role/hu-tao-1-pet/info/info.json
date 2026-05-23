@@ -1,0 +1,18 @@
+{
+  "petName": "小胡桃",
+  "intro": "A compact chibi desk pet inspired by Hu Tao, with a small white ghost companion tucked close beside her.",
+  "coverImages": [
+    "pfp.png"
+  ],
+  "author": {
+    "name": "Codex hatch-pet",
+    "pfp": "pfp.png",
+    "frameColor": "#4f91ff",
+    "infos": "Converted from a Codex hatch-pet package.",
+    "links": {}
+  },
+  "tages": {
+    "Codex": "#b7df8a",
+    "Converted": "#9fd3ff"
+  }
+}

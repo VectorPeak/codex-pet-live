@@ -64,6 +64,7 @@ class backpackInterface(ScrollArea):
         self.headerWidget = QWidget(self)
         self.headerWidget.setFixedWidth(sizeHintdb[0]-175)
         self.panelLabel = QLabel(self.tr("Backpack"), self.headerWidget)
+        self.panelLabel.setStyleSheet("color: #202124; background-color: transparent;")
         self.panelLabel.setSizePolicy(QSizePolicy.Maximum, self.panelLabel.sizePolicy().verticalPolicy())
         self.panelLabel.adjustSize()
         #self.panelLabel.adjustSize() #setFixedWidth(150)

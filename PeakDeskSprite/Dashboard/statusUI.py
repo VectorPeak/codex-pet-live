@@ -9,7 +9,7 @@ from qfluentwidgets import (SettingCardGroup, SwitchSettingCard, HyperlinkCard, 
 
 from qfluentwidgets import FluentIcon as FIF
 from PySide6.QtCore import Qt, Signal, QUrl, QStandardPaths, QLocale, QSize
-from PySide6.QtGui import QDesktopServices, QIcon, QImage
+from PySide6.QtGui import QDesktopServices, QIcon, QImage, QColor
 from PySide6.QtWidgets import QWidget, QLabel, QApplication, QSpacerItem, QSizePolicy, QHBoxLayout
 
 from .dashboard_widgets import NoteFlowGroup, StatusCard, BuffCard
@@ -54,6 +54,7 @@ class statusInterface(ScrollArea):
         self.headerWidget = QWidget(self)
         self.headerWidget.setFixedWidth(sizeHintdb[0]-165)
         self.panelLabel = QLabel(self.tr("Status"), self.headerWidget)
+        self.panelLabel.setStyleSheet("color: #202124; background-color: transparent;")
         self.panelLabel.setSizePolicy(QSizePolicy.Maximum, self.panelLabel.sizePolicy().verticalPolicy())
         self.panelLabel.adjustSize()
         #self.panelLabel.setFixedWidth(100)
@@ -62,6 +63,7 @@ class statusInterface(ScrollArea):
         self.panelHelp.setIconSize(QSize(25,25))
 
         self.usertagLabel = BodyLabel(self.tr("User Name"))
+        self.usertagLabel.setTextColor(QColor("#202124"))
         self.usertagLabel.setSizePolicy(QSizePolicy.Maximum, self.usertagLabel.sizePolicy().verticalPolicy())
         self.usertagEdit = LineEdit(self)
         self.usertagEdit.setClearButtonEnabled(True)

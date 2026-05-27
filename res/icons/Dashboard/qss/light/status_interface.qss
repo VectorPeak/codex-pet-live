@@ -12,6 +12,12 @@ QScrollArea {
 QLabel#panelLabel {
     font: 33px 'Microsoft YaHei Light';
     font-weight: bold;
+    color: #202124;
+    background-color: transparent;
+}
+
+QLabel#noteFlowTitleLabel {
+    color: #202124;
     background-color: transparent;
 }
 

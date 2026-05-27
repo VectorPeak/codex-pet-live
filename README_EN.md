@@ -45,12 +45,6 @@ English | <a href="README.md">简体中文</a>
   Download the [Release](https://github.com/VectorPeak/PeakDeskSprite/releases), unzip it, and double-click **``PeakDeskSprite.exe``**. Windows release artifacts are named **``PeakDeskSprite-vX.Y.Z-windows-x64.zip``**
 
 
-
-
-## User Manual
-(Under construction)
-
-
 ## Project Structure And Public Docs
 
 - `PeakDeskSprite/__main__.py`: source entry point; the executable in the Release package is named `PeakDeskSprite.exe`

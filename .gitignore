@@ -6,6 +6,7 @@ builddmg.sh
 __pycache__/
 **/__pycache__/
 *.pyc
+*.log
 PeakDeskSprite/__pycache__/
 PeakDeskSprite/SpriteSettings/__pycache__/
 PeakDeskSprite/Dashboard/__pycache__/

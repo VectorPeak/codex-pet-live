@@ -1,0 +1,14 @@
+# Release-only packaging requirements for Windows builds.
+#
+# This file is an intentionally bounded release environment, not a pip freeze.
+# After changing any range, rebuild the package and rerun the smoke checks in
+# docs/release_checklist.md before publishing.
+
+PyInstaller>=6.19,<7.0
+
+apscheduler>=3.10,<4.0
+pynput>=1.7,<2.0
+PySide6>=6.10,<6.12
+PySide6-Fluent-Widgets>=1.10,<2.0
+tendo>=0.3,<0.4
+Pillow>=11.0,<13.0

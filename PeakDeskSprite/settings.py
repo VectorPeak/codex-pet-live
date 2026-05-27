@@ -133,7 +133,7 @@ def _migrate_runtime_data():
 PROJECT_URL = app_identity.PROJECT_URL
 HELP_URL = app_identity.HELP_URL
 DEVDOC_URL = app_identity.DEVDOC_URL
-VERSION = "v0.6.7"
+VERSION = "v0.8.5"
 AUTHOR = "https://github.com/ChaozhongLiu"
 CHARCOLLECT_LINK = app_identity.CHARCOLLECT_LINK
 ITEMCOLLECT_LINK = app_identity.ITEMCOLLECT_LINK

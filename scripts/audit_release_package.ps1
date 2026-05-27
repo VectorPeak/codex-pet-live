@@ -40,6 +40,10 @@ function Test-BlacklistedRelativePath {
         return $true
     }
 
+    if ($leaf -like '*.log') {
+        return $true
+    }
+
     foreach ($segment in $segments) {
         if ($segment -in @('data', 'logs', 'build', 'dist', '__pycache__', 'peakdesk-sprite')) {
             return $true
@@ -47,6 +51,26 @@ function Test-BlacklistedRelativePath {
     }
 
     return $false
+}
+
+function Assert-RequiredRelativePath {
+    param(
+        [string[]] $RelativePaths,
+        [string] $RequiredPath
+    )
+
+    $normalizedRequired = $RequiredPath -replace '/', '\'
+    $hasRequiredPath = $false
+    foreach ($relativePath in $RelativePaths) {
+        if ($relativePath -eq $normalizedRequired -or $relativePath.EndsWith("\" + $normalizedRequired, [System.StringComparison]::OrdinalIgnoreCase)) {
+            $hasRequiredPath = $true
+            break
+        }
+    }
+
+    if (-not $hasRequiredPath) {
+        throw "Release package audit failed. Required path missing: $normalizedRequired"
+    }
 }
 
 try {
@@ -75,6 +99,12 @@ try {
     if ($violations.Count -gt 0) {
         Write-Error ("Release package audit failed. Blacklisted paths found:`n" + ($violations -join "`n"))
     }
+
+    $normalizedRelativePaths = @($relativePaths | ForEach-Object { $_ -replace '/', '\' })
+    Assert-RequiredRelativePath -RelativePaths $normalizedRelativePaths -RequiredPath 'PeakDeskSprite.exe'
+    Assert-RequiredRelativePath -RelativePaths $normalizedRelativePaths -RequiredPath 'res\icons'
+    Assert-RequiredRelativePath -RelativePaths $normalizedRelativePaths -RequiredPath 'res\role'
+    Assert-RequiredRelativePath -RelativePaths $normalizedRelativePaths -RequiredPath 'res\language'
 
     Write-Host "[audit] PASS: no blacklisted paths found in $path"
 }

@@ -37,7 +37,7 @@
   
 如果你喜欢这个桌宠程序，请点击右上角的 ⭐ **STAR**，这对我们有很大的激励！
   
-:new: **05-19-2026: v0.8.5** 程序已打包上传 [Release](https://github.com/VectorPeak/PeakDeskSprite/releases/tag/v0.8.5)，有任何问题欢迎向我反馈！(LLM 模块暂未开源)
+:new: **05-19-2026: v0.8.5** 程序发布入口见 [Releases](https://github.com/VectorPeak/PeakDeskSprite/releases)，有任何问题欢迎向我反馈！(LLM 模块暂未开源)
   
 :new: **06-26-2024**: CSDN 正大规模从 GitHub 搬运开源项目至其旗下 GitCode，包括 PeakDeskSprite。该仓库与我们没有任何关系。GitCode 使用我名字的主页也并非我本人创建，也请仔细甄别您在 GitCode 上看到的其他项目！
   
@@ -46,7 +46,7 @@
   
 ## 快速体验 Demo
 ### Windows 用户
-  将 Release 下载至本地，双击 **``run_PeakDeskSprite.exe``** 即可
+  将 [Release](https://github.com/VectorPeak/PeakDeskSprite/releases) 下载至本地，解压后双击 **``PeakDeskSprite.exe``** 即可，当前 Windows 发布包产物命名为 **``PeakDeskSprite-vX.Y.Z-windows-x64.zip``**
 
 
 ### Windows Terminal
@@ -82,6 +82,17 @@
 请参考用户手册，体验现有功能 (施工中)
 
 
+## 项目结构与公开文档
+
+- `run_PeakDeskSprite.py`：源码运行入口；Release 包中的可执行文件统一命名为 `PeakDeskSprite.exe`
+- `PeakDeskSprite/`：PySide6 桌宠运行时代码、设置面板、仪表盘、通知、LLM 相关界面和服务
+- `res/`：默认角色、物品、语言和 UI 资源
+- `docs/`：开发、发布和源码结构文档
+- `scripts/`：发布构建、发布包审计和 smoke test 脚本
+
+更多维护文档请参考：[素材开发文档](docs/art_dev.md)、[素材与模组合集](docs/collection.md)、[HatchPet 转换说明](docs/hatchpet_converter.md)、[源码结构说明](docs/source_architecture.md)、[依赖结构图](docs/source_dependency_map.md)、[Windows 发布清单](docs/release_checklist.md)、[参与贡献](CONTRIBUTING.md)、[安全报告](SECURITY.md)
+
+
 
 
 ## 开发者文档
@@ -89,7 +100,17 @@
 若您想要在现有功能下，开发一套新的宠物形象、动作，请参考[素材开发文档](docs/art_dev.md)
 
 ### 功能开发
-若您想要在现有模块下，开发新的功能，请参考[功能开发文档](README.md) (施工中)
+若您想要在现有模块下开发新的功能，请先参考[源码结构说明](docs/source_architecture.md)、[依赖结构图](docs/source_dependency_map.md)和[参与贡献](CONTRIBUTING.md)
+
+
+## LLM 隐私说明
+
+LLM 功能是可选功能。启用后，桌宠会把用户输入、必要的聊天上下文、角色提示词和事件文本发送到用户配置的 LLM 服务商；API Key 优先从环境变量读取，也可保存在本机运行态配置目录，聊天记录保存在本机运行态数据目录。请不要在公开 issue、日志或截图中粘贴 API Key、聊天记录、服务商返回体或未脱敏的本机路径
+
+
+## 第三方与素材授权
+
+项目代码遵循仓库内的 [LICENSE](LICENSE)。默认素材、示例素材、第三方角色/物品模组、外部字体/图标/音频和用户自行导入的素材可能有独立授权边界；分发或二次创作前请阅读 [NOTICE.md](NOTICE.md)
 
 
 ## 更新日志

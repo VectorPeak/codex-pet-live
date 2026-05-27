@@ -127,6 +127,7 @@ class NoteFlowGroup(QWidget):
         self.notes_list = []
 
         self.titleLabel = QLabel(title, self)
+        self.titleLabel.setObjectName("noteFlowTitleLabel")
         self.vBoxLayout = QVBoxLayout(self)
         self.noteLayout = QVBoxLayout()
 

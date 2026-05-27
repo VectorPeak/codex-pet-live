@@ -1,5 +1,6 @@
 param(
-    [string] $PythonPath = 'D:\ZXY\Dev\Miniconda3\envs\Dyber_pyside\python.exe',
+    [string] $PythonPath = 'python',
+    [string] $Version = '',
     [string] $Configuration = 'windowed',
     [switch] $SkipBuild,
     [switch] $SkipArchive
@@ -15,10 +16,10 @@ $distRoot = Join-Path $releaseRoot 'dist'
 $buildRoot = Join-Path $releaseRoot 'build'
 $specRoot = Join-Path $releaseRoot 'spec'
 $packageDir = Join-Path $distRoot 'PeakDeskSprite'
-$zipPath = Join-Path $releaseRoot 'PeakDeskSprite-windows-x64.zip'
 $auditScript = Join-Path $scriptDir 'audit_release_package.ps1'
 $entryPoint = Join-Path $repoRoot 'run_PeakDeskSprite.py'
 $resourceDir = Join-Path $repoRoot 'res'
+$settingsFile = Join-Path $repoRoot 'PeakDeskSprite/settings.py'
 
 function Write-Step {
     param([string] $Message)
@@ -65,12 +66,31 @@ if ($Configuration -notin @('windowed', 'console')) {
     throw "Unsupported configuration '$Configuration'. Use 'windowed' or 'console'."
 }
 
-Assert-FileExists -Path $PythonPath -Description 'Conda Python'
+if ($PythonPath -ne 'python') {
+    Assert-FileExists -Path $PythonPath -Description 'Python interpreter'
+}
 Assert-FileExists -Path $entryPoint -Description 'Application entry point'
 Assert-FileExists -Path $auditScript -Description 'Release audit script'
+Assert-FileExists -Path $settingsFile -Description 'Application settings file'
 if (-not (Test-Path -LiteralPath $resourceDir -PathType Container)) {
     throw "Resource directory not found: $resourceDir"
 }
+
+$settingsText = Get-Content -LiteralPath $settingsFile -Raw -Encoding UTF8
+$versionMatch = [regex]::Match($settingsText, 'VERSION\s*=\s*"([^"]+)"')
+if (-not $versionMatch.Success) {
+    throw "Unable to read VERSION from $settingsFile"
+}
+$appVersion = $versionMatch.Groups[1].Value
+if ([string]::IsNullOrWhiteSpace($Version)) {
+    $Version = $appVersion
+}
+if ($Version -ne $appVersion) {
+    throw "Release version '$Version' does not match application VERSION '$appVersion'."
+}
+
+$safeVersion = $Version -replace '[^A-Za-z0-9_.-]', '-'
+$zipPath = Join-Path $releaseRoot "PeakDeskSprite-$safeVersion-windows-x64.zip"
 
 if (-not $SkipBuild) {
     Write-Step 'Cleaning release-work output directories'

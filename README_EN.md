@@ -12,10 +12,6 @@
   </a>
 
   <a style="text-decoration:none">
-    <img src="https://img.shields.io/github/downloads/VectorPeak/PeakDeskSprite/total.svg"/>
-  </a>
-
-  <a style="text-decoration:none">
     <img src="https://img.shields.io/badge/python-3.9+-blue.svg" />
   </a>
 

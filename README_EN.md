@@ -39,15 +39,32 @@ English | <a href="README.md">简体中文</a>
 
 ![Main interface](docs/PeakDeskSprite.png)
 
-| LLM Provider And Bubbles | Chat Panel |
-| --- | --- |
-| ![LLM provider settings](docs/preview_img/llm-provider.png) | ![LLM chat panel](docs/preview_img/llm-chat.png) |
-| Configure an OpenAI-compatible provider, model, API key, and environment-variable fallback | Chat with the selected character, keep local history, and adjust role prompts |
-
-| Bubble Behavior | Role Manager |
-| --- | --- |
-| ![Bubble behavior settings](docs/preview_img/llm-bubble-settings.png) | ![Role manager](docs/preview_img/role-manager.png) |
-| Tune bubble mode, active chat, cooldowns, pat-triggered bubbles, and status-triggered bubbles | Add, switch, and launch desktop pet roles from the control panel |
+<table>
+  <tr>
+    <th width="50%">LLM Provider And Bubbles</th>
+    <th width="50%">Chat Panel</th>
+  </tr>
+  <tr>
+    <td><img src="docs/preview_img/llm-provider.png" alt="LLM provider settings" width="100%"></td>
+    <td><img src="docs/preview_img/llm-chat.png" alt="LLM chat panel" width="100%"></td>
+  </tr>
+  <tr>
+    <td>Configure an OpenAI-compatible provider, model, API key, and environment-variable fallback</td>
+    <td>Chat with the selected character, keep local history, and adjust role prompts</td>
+  </tr>
+  <tr>
+    <th>Bubble Behavior</th>
+    <th>Role Manager</th>
+  </tr>
+  <tr>
+    <td><img src="docs/preview_img/llm-bubble-settings.png" alt="Bubble behavior settings" width="100%"></td>
+    <td><img src="docs/preview_img/role-manager.png" alt="Role manager" width="100%"></td>
+  </tr>
+  <tr>
+    <td>Tune bubble mode, active chat, cooldowns, pat-triggered bubbles, and status-triggered bubbles</td>
+    <td>Add, switch, and launch desktop pet roles from the control panel</td>
+  </tr>
+</table>
 
 | Basic Settings |
 | --- |

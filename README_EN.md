@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  Bring Codex-generated pets to life on your Windows desktop
+  A Windows desktop runtime that brings Codex-generated pets to life
 </p>
 
 <p align="center">

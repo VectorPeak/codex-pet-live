@@ -39,6 +39,26 @@ English | <a href="README.md">简体中文</a>
 ⭐ Please **STAR** if you like it and want to get the update!
 
 
+## Preview
+
+![Main interface](docs/PeakDeskSprite.png)
+
+| LLM Provider And Bubbles | Chat Panel |
+| --- | --- |
+| ![LLM provider settings](docs/preview_img/llm-provider.png) | ![LLM chat panel](docs/preview_img/llm-chat.png) |
+| Configure an OpenAI-compatible provider, model, API key, and environment-variable fallback | Chat with the selected character, keep local history, and adjust role prompts |
+
+| Bubble Behavior | Role Manager |
+| --- | --- |
+| ![Bubble behavior settings](docs/preview_img/llm-bubble-settings.png) | ![Role manager](docs/preview_img/role-manager.png) |
+| Tune bubble mode, active chat, cooldowns, pat-triggered bubbles, and status-triggered bubbles | Add, switch, and launch desktop pet roles from the control panel |
+
+| Basic Settings |
+| --- |
+| ![Basic settings](docs/preview_img/basic-settings.png) |
+| Adjust pet size, default pet, language, theme color, update links, issue links, and developer docs |
+
+
 ## Quick Start
 
 ### Windows Users

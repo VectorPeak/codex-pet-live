@@ -1,0 +1,131 @@
+# coding:utf-8
+import sys
+import os
+from PySide6.QtCore import Qt, QUrl
+from PySide6.QtGui import QIcon, QDesktopServices
+from PySide6.QtWidgets import QApplication
+from qfluentwidgets import (NavigationItemPosition, MessageBox, setTheme, Theme, FluentWindow,
+                            NavigationAvatarWidget,  SplitFluentWindow, FluentTranslator)
+from qfluentwidgets import FluentIcon as FIF
+
+from .BasicSettingUI import SettingInterface
+from .GameSaveUI import SaveInterface
+from .CharCardUI import CharInterface
+from .ItemCardUI import ItemInterface
+from .PetCardUI import PetInterface
+from .LLMProviderUI import LLMProviderInterface
+from .LLMChatUI import LLMChatInterface
+from sys import platform
+import CodexPetLive.settings as settings
+from CodexPetLive.resource_paths import package_path, resource_path
+basedir = settings.BASEDIR
+
+module_path = package_path('SpriteSettings')
+
+
+class ControlMainWindow(FluentWindow):
+
+    def __init__(self, minWidth=800, minHeight=800):
+        super().__init__()
+
+        # create sub interface
+        self.settingInterface = SettingInterface(self)
+        self.gamesaveInterface = SaveInterface(sizeHintSprite=(minWidth, minHeight), parent=self)
+        self.charCardInterface = CharInterface(sizeHintSprite=(minWidth, minHeight), parent=self)
+        self.itemCardInterface = ItemInterface(sizeHintSprite=(minWidth, minHeight), parent=self)
+        self.petCardInterface = PetInterface(sizeHintSprite=(minWidth, minHeight), parent=self)
+        self.llmChatInterface = LLMChatInterface(self)
+        self.llmProviderInterface = LLMProviderInterface(self)
+        self.llmChatInterface.openProviderSettings.connect(self.show_llm_provider)
+
+        self.initNavigation()
+        self.setMinimumSize(minWidth, minHeight)
+        self.initWindow()
+
+    def initNavigation(self):
+        # add sub interface
+        self.addSubInterface(self.settingInterface, FIF.SETTING, self.tr('Settings'))
+        self.addSubInterface(self.llmChatInterface, FIF.CHAT, self.tr('聊天'))
+        self.addSubInterface(self.llmProviderInterface, FIF.ROBOT, self.tr('大模型服务'))
+        self.addSubInterface(self.gamesaveInterface,
+                             FIF.SAVE, #QIcon(os.path.join(module_path, 'resource/saveIcon.svg')), 
+                             self.tr('Game Save'))
+        self.addSubInterface(self.charCardInterface,
+                             QIcon(resource_path("res", "icons", "system", "character.svg")),
+                             self.tr('Characters'))
+        self.addSubInterface(self.itemCardInterface,
+                             QIcon(resource_path("res", "icons", "system", "itemMod.svg")),
+                             self.tr('Item MOD'))
+        self.addSubInterface(self.petCardInterface,
+                             QIcon(resource_path("res", "icons", "system", "minipet.svg")),
+                             self.tr('Mini-Pets'))
+
+
+        self.navigationInterface.setExpandWidth(200)
+
+    def initWindow(self):
+        #self.setMinimumSize(minWidth, minHeight)
+        #self.resize(1000, 800)
+        self.setWindowIcon(QIcon(resource_path("res", "icons", "SystemPanel.png")))
+        self.setWindowTitle(self.tr('System'))
+
+        desktop = QApplication.primaryScreen().availableGeometry() #QApplication.desktop().availableGeometry()
+        w, h = desktop.width(), desktop.height()
+        self.move(w//2 - self.width()//2, h//2 - self.height()//2)
+
+    def show_window(self):
+        if self.isVisible():
+            if self.isMinimized():
+                self.showNormal()
+        else:
+            self.showNormal()
+        self.raise_()
+        self.activateWindow()
+
+    def show_llm_provider(self):
+        self.showNormal()
+        self.raise_()
+        self.activateWindow()
+        self.switchTo(self.llmProviderInterface)
+
+    def closeEvent(self, event):
+        event.ignore()  # Ignore the close event
+        self.hide()
+
+    #def _onCharChange(self, char):
+    #    self.hide()
+
+
+if __name__ == '__main__':
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
+    # setTheme(Theme.DARK)
+
+    app = QApplication(sys.argv)
+
+    # install translator
+    translator = FluentTranslator()
+    app.installTranslator(translator)
+
+    w = ControlMainWindow()
+    w.show()
+    app.exec_()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

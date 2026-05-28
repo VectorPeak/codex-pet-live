@@ -1,22 +1,22 @@
-# PeakDeskSprite Source Architecture
+# CodexPetLive Source Architecture
 
 This document records the current source dependency map and the proposed naming boundaries for future refactors. It is intentionally conservative: do not move runtime modules until the import graph, resource paths, Qt lifetime rules, and packaging path are covered by tests.
 
 ## Current Layers
 
 ```text
-PeakDeskSprite/__main__.py
-  -> PeakDeskSprite.PeakDeskSprite.PetWidget
-  -> PeakDeskSprite.Notification.SpriteNote
-  -> PeakDeskSprite.Accessory.SpriteAccessory
-  -> PeakDeskSprite.SpriteSettings.SpriteControlPanel.ControlMainWindow
-  -> PeakDeskSprite.Dashboard.DashboardUI.DashboardMainWindow
+CodexPetLive/__main__.py
+  -> CodexPetLive.CodexPetLive.PetWidget
+  -> CodexPetLive.Notification.SpriteNote
+  -> CodexPetLive.Accessory.SpriteAccessory
+  -> CodexPetLive.SpriteSettings.SpriteControlPanel.ControlMainWindow
+  -> CodexPetLive.Dashboard.DashboardUI.DashboardMainWindow
 
-PeakDeskSprite.settings
+CodexPetLive.settings
   -> runtime paths, global user preferences, role list, runtime data objects
   -> conf.PetData / TaskData / ActData / ItemData
 
-PeakDeskSprite.conf
+CodexPetLive.conf
   -> role config, action config, item config, save data, validation
   -> res/role, res/pet, res/items
 
@@ -36,16 +36,16 @@ The high-coupling files are not necessarily wrong, but they are the first places
 
 | File | Current role | Coupling signal | Better long-term name |
 | --- | --- | --- | --- |
-| `PeakDeskSprite/PeakDeskSprite.py` | Pet window and runtime coordinator | Imports runtime objects, widgets, settings, config, bubbles, and resource helpers | `ui/pet_window.py` plus `runtime/pet_controller.py` |
-| `PeakDeskSprite/settings.py` | Global settings plus runtime state bootstrap | Many modules read and mutate `settings.*` directly | `config/app_settings.py` plus `runtime/app_state.py` |
-| `PeakDeskSprite/conf.py` | Role/action/item/save models and validators | Mixes config parsing, save data, role validation, and item data | `domain/role_config.py`, `domain/save_data.py`, `domain/item_config.py` |
-| `PeakDeskSprite/modules.py` | Worker and animation helpers | Generic name hides scheduling and interaction responsibilities | `runtime/workers.py` or `animation/workers.py` |
-| `PeakDeskSprite/Accessory.py` | Accessory and companion pet runtime | Large UI/runtime module with direct settings/config access | `runtime/accessories.py` |
-| `PeakDeskSprite/Notification.py` | Notification and bubble display widgets | Name is broad; includes bubble display behavior | `ui/notifications.py` and `ui/bubbles.py` |
-| `PeakDeskSprite/bubbleManager.py` | Bubble scheduling and LLM bubble integration | Mixes policy, Qt timers, and LLM requests | `services/bubble_policy.py` plus `ui/bubble_manager.py` |
-| `PeakDeskSprite/extra_windows.py` | Multiple legacy/extra windows | Generic bucket, hard to infer ownership | split by feature before renaming |
-| `PeakDeskSprite/SpriteSettings/custom_utils.py` | Settings UI helper widgets and role cards | Large mixed helper module | `ui/settings/widgets.py`, `ui/settings/role_cards.py` |
-| `PeakDeskSprite/Dashboard/dashboard_widgets.py` | Dashboard shared widgets and logic | Large mixed UI plus business behavior | `ui/dashboard/widgets.py`, then split by feature |
+| `CodexPetLive/CodexPetLive.py` | Pet window and runtime coordinator | Imports runtime objects, widgets, settings, config, bubbles, and resource helpers | `ui/pet_window.py` plus `runtime/pet_controller.py` |
+| `CodexPetLive/settings.py` | Global settings plus runtime state bootstrap | Many modules read and mutate `settings.*` directly | `config/app_settings.py` plus `runtime/app_state.py` |
+| `CodexPetLive/conf.py` | Role/action/item/save models and validators | Mixes config parsing, save data, role validation, and item data | `domain/role_config.py`, `domain/save_data.py`, `domain/item_config.py` |
+| `CodexPetLive/modules.py` | Worker and animation helpers | Generic name hides scheduling and interaction responsibilities | `runtime/workers.py` or `animation/workers.py` |
+| `CodexPetLive/Accessory.py` | Accessory and companion pet runtime | Large UI/runtime module with direct settings/config access | `runtime/accessories.py` |
+| `CodexPetLive/Notification.py` | Notification and bubble display widgets | Name is broad; includes bubble display behavior | `ui/notifications.py` and `ui/bubbles.py` |
+| `CodexPetLive/bubbleManager.py` | Bubble scheduling and LLM bubble integration | Mixes policy, Qt timers, and LLM requests | `services/bubble_policy.py` plus `ui/bubble_manager.py` |
+| `CodexPetLive/extra_windows.py` | Multiple legacy/extra windows | Generic bucket, hard to infer ownership | split by feature before renaming |
+| `CodexPetLive/SpriteSettings/custom_utils.py` | Settings UI helper widgets and role cards | Large mixed helper module | `ui/settings/widgets.py`, `ui/settings/role_cards.py` |
+| `CodexPetLive/Dashboard/dashboard_widgets.py` | Dashboard shared widgets and logic | Large mixed UI plus business behavior | `ui/dashboard/widgets.py`, then split by feature |
 | `tools/codex-skill-peakdesk-sprite/` | Codex skill and role production references | Non-runtime development tooling | keep under `tools/` |
 
 ## Recommended Target Names
@@ -53,7 +53,7 @@ The high-coupling files are not necessarily wrong, but they are the first places
 These names describe responsibility rather than implementation detail.
 
 ```text
-PeakDeskSprite/
+CodexPetLive/
   app_identity.py              # app name, repository URLs, env var names
   runtime_paths.py             # AppData and package/resource path helpers
   config/
@@ -78,13 +78,13 @@ PeakDeskSprite/
     dashboard/
 ```
 
-The target structure should be reached through compatibility shims, not a single large move. For example, keep `PeakDeskSprite/settings.py` as a facade while new code imports `PeakDeskSprite.config.app_settings`.
+The target structure should be reached through compatibility shims, not a single large move. For example, keep `CodexPetLive/settings.py` as a facade while new code imports `CodexPetLive.config.app_settings`.
 
 ## Safe Refactor Order
 
 1. Move non-runtime tooling out of the package.
-   - Done: `PeakDeskSprite/peakdesk-sprite` is now `tools/codex-skill-peakdesk-sprite`.
-   - Reason: skill references are not application runtime code and should not be bundled with `--add-data PeakDeskSprite`.
+   - Done: `CodexPetLive/peakdesk-sprite` is now `tools/codex-skill-peakdesk-sprite`.
+   - Reason: skill references are not application runtime code and should not be bundled with `--add-data CodexPetLive`.
 
 2. Add explicit path boundaries.
    - Keep `runtime_paths.py` as the only place that knows AppData layout.
@@ -100,19 +100,19 @@ The target structure should be reached through compatibility shims, not a single
 
 5. Split UI by domain.
    - Dashboard and settings panels can move only after their dependency on global `settings` is reduced.
-   - Do not rename `PeakDeskSprite.py`, `Accessory.py`, or `Notification.py` until launch, tray, bubble, and packaging smoke tests are stable.
+   - Do not rename `CodexPetLive.py`, `Accessory.py`, or `Notification.py` until launch, tray, bubble, and packaging smoke tests are stable.
 
 ## Minimum Regression For Any Move
 
 ```powershell
-D:\ZXY\Dev\Miniconda3\envs\Dyber_pyside\python.exe -m compileall PeakDeskSprite
+D:\ZXY\Dev\Miniconda3\envs\Dyber_pyside\python.exe -m compileall CodexPetLive
 
 @'
-from PeakDeskSprite.conf import CheckCharFiles
+from CodexPetLive.conf import CheckCharFiles
 for role in ["BestFriendsCodex", "frierencodex", "jige-kunkun", "lajiaoquan", "hu-tao-1-pet", "shogun-dango", "genshin-ayaka"]:
     code, errors = CheckCharFiles(rf"D:\ZXY\Codex\DyberPet\res\role\{role}")
     print(role, code, errors)
 '@ | D:\ZXY\Dev\Miniconda3\envs\Dyber_pyside\python.exe -
 ```
 
-For any move that touches Qt UI or resource paths, also run the packaged app and verify `dist/PeakDeskSprite/data` does not exist.
+For any move that touches Qt UI or resource paths, also run the packaged app and verify the packaged app does not create a data directory inside `dist/CodexPetLive`.

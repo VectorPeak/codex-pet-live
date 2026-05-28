@@ -1,19 +1,19 @@
 ---
 name: peakdesk-sprite
-description: Create, convert, validate, import, smoke-test, and package PeakDeskSprite desktop pet role modules. Use when Codex needs to build PeakDeskSprite or DyberPet character resources, transform Codex hatch-pet packages into PeakDeskSprite role folders, inspect or repair role module structure, generate role metadata, verify assets with Pillow/PySide6, or run the desktop app with a generated character.
+description: Create, convert, validate, import, smoke-test, and package CodexPetLive desktop pet role modules. Use when Codex needs to build CodexPetLive or DyberPet character resources, transform Codex hatch-pet packages into CodexPetLive role folders, inspect or repair role module structure, generate role metadata, verify assets with Pillow/PySide6, or run the desktop app with a generated character.
 ---
 
-# PeakDeskSprite
+# CodexPetLive
 
 ## Overview
 
-Build PeakDeskSprite desktop pet role modules end to end. The target artifact is a role folder under `res/role/<RoleName>/`, not a Codex custom pet package. Keep Chinese JSON and Markdown files UTF-8.
+Build CodexPetLive desktop pet role modules end to end. The target artifact is a role folder under `res/role/<RoleName>/`, not a Codex custom pet package. Keep Chinese JSON and Markdown files UTF-8.
 
-If the user asks to generate a new Codex pet first, use `$hatch-pet` for visual generation and Codex atlas packaging, then return to this skill to convert and verify the PeakDeskSprite module.
+If the user asks to generate a new Codex pet first, use `$hatch-pet` for visual generation and Codex atlas packaging, then return to this skill to convert and verify the CodexPetLive module.
 
 ## Mental Model
 
-PeakDeskSprite role creation is a three-layer contract:
+CodexPetLive role creation is a three-layer contract:
 
 ```text
 pet_conf.json  -> schedule: default, drag, fall, random action groups
@@ -25,7 +25,7 @@ The native app check proves the files are connected. It does not prove transpare
 
 ## Workflow
 
-1. Find the repo root. It must contain `PeakDeskSprite/__main__.py`, `PeakDeskSprite/`, and `res/role/`.
+1. Find the repo root. It must contain `CodexPetLive/__main__.py`, `CodexPetLive/`, and `res/role/`.
 2. Inspect the active Python environment. Install `Pillow` only if image conversion or validation needs it and it is missing.
 3. Choose a path:
    - Native role creation or repair: read `references/role-contract.md`.
@@ -34,7 +34,7 @@ The native app check proves the files are connected. It does not prove transpare
 4. Generate or convert into `res/role/<RoleName>/`.
 5. Run deterministic validation:
    - this skill's validator script;
-   - `PeakDeskSprite.conf.CheckCharFiles`;
+   - `CodexPetLive.conf.CheckCharFiles`;
    - PySide6 pixmap smoke test.
 6. When the user asks whether it really works, launch the app with logs and inspect process state plus logs. A second launch may exit with `Another instance is already running, quitting.`; do not confuse that with a crash.
 7. Report exact absolute paths for role output, logs, contact sheets, previews, and any modified config.
@@ -70,7 +70,7 @@ Then run framework validation:
 
 ```powershell
 @'
-from PeakDeskSprite.conf import CheckCharFiles
+from CodexPetLive.conf import CheckCharFiles
 code, errors = CheckCharFiles(r"D:\absolute\path\to\res\role\BestFriendsCodex")
 print(code, errors)
 '@ | python -
@@ -103,7 +103,7 @@ New-Item -ItemType Directory -Force -Path ".\logs" | Out-Null
 $Out = ".\logs\run_$Stamp.out.log"
 $Err = ".\logs\run_$Stamp.err.log"
 Start-Process -FilePath "python" `
-  -ArgumentList "-X","faulthandler","-u","-m","PeakDeskSprite" `
+  -ArgumentList "-X","faulthandler","-u","-m","CodexPetLive" `
   -WorkingDirectory (Get-Location) `
   -RedirectStandardOutput $Out `
   -RedirectStandardError $Err `

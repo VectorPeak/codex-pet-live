@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Convert Codex hatch-pet packages into PeakDeskSprite role modules."""
+"""Convert Codex hatch-pet packages into CodexPetLive role modules."""
 
 from __future__ import annotations
 
@@ -376,7 +376,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Convert a Codex hatch-pet package into a PeakDeskSprite role module.",
+        description="Convert a Codex hatch-pet package into a CodexPetLive role module.",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -385,14 +385,14 @@ def build_parser() -> argparse.ArgumentParser:
     convert_parser.add_argument("--pet-json", help="Path to pet.json; defaults to <input>/pet.json")
     convert_parser.add_argument("--spritesheet", help="Path to spritesheet; defaults to pet.json spritesheetPath")
     convert_parser.add_argument("--out-root", default="res/role", help="Output root; ignored when --out-dir is set")
-    convert_parser.add_argument("--out-dir", help="Exact PeakDeskSprite role output directory")
+    convert_parser.add_argument("--out-dir", help="Exact CodexPetLive role output directory")
     convert_parser.add_argument("--role-name", help="Output role folder name; defaults to pet id")
     convert_parser.add_argument("--display-name", help="Display name stored in metadata")
     convert_parser.add_argument("--description", help="Description stored in metadata")
     convert_parser.add_argument("--overwrite", action="store_true", help="Replace output directory if it exists")
     convert_parser.set_defaults(func=cmd_convert)
 
-    validate_parser = subparsers.add_parser("validate", help="validate a generated PeakDeskSprite role directory")
+    validate_parser = subparsers.add_parser("validate", help="validate a generated CodexPetLive role directory")
     validate_parser.add_argument("role_dir")
     validate_parser.set_defaults(func=cmd_validate)
 

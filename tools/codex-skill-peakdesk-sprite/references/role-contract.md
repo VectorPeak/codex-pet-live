@@ -1,4 +1,4 @@
-# PeakDeskSprite Role Contract
+# CodexPetLive Role Contract
 
 ## Directory Shape
 
@@ -140,7 +140,7 @@ Recommended shape:
 
 `author` must be an object. Do not write it as a string.
 
-Allowed link keys are controlled by `PeakDeskSprite.settings.LINK_PERMIT`: `BiliBili`, `微博`, `抖音`, `GitHub`, `爱发电`, `TikTok`, and `YouTube`.
+Allowed link keys are controlled by `CodexPetLive.settings.LINK_PERMIT`: `BiliBili`, `微博`, `抖音`, `GitHub`, `爱发电`, `TikTok`, and `YouTube`.
 
 ## Failure Risks
 

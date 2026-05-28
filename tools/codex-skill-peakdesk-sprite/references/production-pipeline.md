@@ -10,7 +10,7 @@ hatch-pet separates generation from deterministic processing:
 visual generation -> decoded rows -> deterministic frames -> QA -> package
 ```
 
-PeakDeskSprite should use the same separation:
+CodexPetLive should use the same separation:
 
 ```text
 concept/reference -> action frame sets -> pet_conf/act_conf -> validation -> app import/run
@@ -64,7 +64,7 @@ Script checks should verify:
 Framework checks should verify:
 
 ```powershell
-from PeakDeskSprite.conf import CheckCharFiles
+from CodexPetLive.conf import CheckCharFiles
 ```
 
 PySide6 smoke tests should load each frame into `QPixmap`.
@@ -84,7 +84,7 @@ Generate a contact sheet and optional GIF previews for generated assets. Reject:
 
 ## Runtime QA
 
-When the user asks for proof, set `data/settings.json` default role to the generated role, launch `python -X faulthandler -u -m PeakDeskSprite`, redirect stdout/stderr into `logs/`, then inspect:
+When the user asks for proof, set `data/settings.json` default role to the generated role, launch `python -X faulthandler -u -m CodexPetLive`, redirect stdout/stderr into `logs/`, then inspect:
 
 - process state;
 - stdout and stderr;

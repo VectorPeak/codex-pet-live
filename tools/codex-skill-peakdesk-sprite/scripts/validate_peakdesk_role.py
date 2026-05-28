@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Validate a PeakDeskSprite role module more strictly than the app import check."""
+"""Validate a CodexPetLive role module more strictly than the app import check."""
 
 from __future__ import annotations
 

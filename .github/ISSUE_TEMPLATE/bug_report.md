@@ -22,7 +22,7 @@ assignees: ""
 - Python 版本：
 - CodexPetLive 版本或提交：
 - 安装方式：Release / 源码运行 / 其他
-- 运行命令：`python -m PeakDeskSprite`
+- 运行命令：`python -m CodexPetLive`
 
 ## 实际结果
 

@@ -1,4 +1,4 @@
 interface:
-  display_name: "PeakDeskSprite"
-  short_description: "Create, convert, validate, and run-test PeakDeskSprite desktop pet modules."
-  default_prompt: "Create, convert, validate, import, or smoke-test a PeakDeskSprite desktop pet role module."
+  display_name: "CodexPetLive"
+  short_description: "Create, convert, validate, and run-test CodexPetLive desktop pet modules."
+  default_prompt: "Create, convert, validate, import, or smoke-test a CodexPetLive desktop pet role module."

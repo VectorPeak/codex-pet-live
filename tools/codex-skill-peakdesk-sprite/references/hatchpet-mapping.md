@@ -1,4 +1,4 @@
-# Codex Hatch-Pet To PeakDeskSprite Mapping
+# Codex Hatch-Pet To CodexPetLive Mapping
 
 ## Source Contract
 
@@ -18,7 +18,7 @@ Atlas contract:
 
 Rows:
 
-| Row | Hatch state | Frames | PeakDeskSprite prefix |
+| Row | Hatch state | Frames | CodexPetLive prefix |
 | --- | --- | ---: | --- |
 | 0 | `idle` | 6 | `stand` |
 | 1 | `running-right` | 8 | `rightwalk` |
@@ -30,9 +30,9 @@ Rows:
 | 7 | `running` | 6 | `focus` |
 | 8 | `review` | 6 | `review` |
 
-## Generated PeakDeskSprite Actions
+## Generated CodexPetLive Actions
 
-| PeakDeskSprite action | Source prefix | Purpose |
+| CodexPetLive action | Source prefix | Purpose |
 | --- | --- | --- |
 | `default` | `stand` | idle/default |
 | `left_walk` | `leftwalk` | left movement |
@@ -46,7 +46,7 @@ Rows:
 | `review` | `review` | focused inspection |
 | `failed` | `failed` | failure state |
 
-The mapping is intentionally conservative. It favors a stable import over perfect semantic richness because Codex hatch-pet rows and PeakDeskSprite native interactions are not the same product contract.
+The mapping is intentionally conservative. It favors a stable import over perfect semantic richness because Codex hatch-pet rows and CodexPetLive native interactions are not the same product contract.
 
 ## Metadata
 
@@ -71,4 +71,4 @@ python ".\tools\codex-skill-peakdesk-sprite\scripts\validate_peakdesk_role.py" "
 python ".\tools\codex-skill-peakdesk-sprite\scripts\hatchpet_to_peakdesk.py" validate "res\role\RoleName"
 ```
 
-Then run `PeakDeskSprite.conf.CheckCharFiles`. Treat all three checks as necessary: the first is stronger on assets, the second is converter-local compatibility, and the third verifies the current app code path.
+Then run `CodexPetLive.conf.CheckCharFiles`. Treat all three checks as necessary: the first is stronger on assets, the second is converter-local compatibility, and the third verifies the current app code path.

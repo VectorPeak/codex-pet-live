@@ -12,7 +12,7 @@
 
 ## 验证方式
 
-- [ ] 已在 Windows 上运行 `python -m PeakDeskSprite`
+- [ ] 已在 Windows 上运行 `python -m CodexPetLive`
 - [ ] 已检查桌宠显示、拖拽、设置界面或相关功能
 - [ ] 已更新必要文档或配置示例
 

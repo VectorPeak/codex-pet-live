@@ -15,11 +15,11 @@ $releaseRoot = Join-Path $repoRoot 'release-work'
 $distRoot = Join-Path $releaseRoot 'dist'
 $buildRoot = Join-Path $releaseRoot 'build'
 $specRoot = Join-Path $releaseRoot 'spec'
-$packageDir = Join-Path $distRoot 'PeakDeskSprite'
+$packageDir = Join-Path $distRoot 'CodexPetLive'
 $auditScript = Join-Path $scriptDir 'audit_release_package.ps1'
-$entryPoint = Join-Path $repoRoot 'PeakDeskSprite\__main__.py'
+$entryPoint = Join-Path $repoRoot 'CodexPetLive\__main__.py'
 $resourceDir = Join-Path $repoRoot 'res'
-$settingsFile = Join-Path $repoRoot 'PeakDeskSprite/settings.py'
+$settingsFile = Join-Path $repoRoot 'CodexPetLive/settings.py'
 
 function Write-Step {
     param([string] $Message)
@@ -106,7 +106,7 @@ if (-not $SkipBuild) {
         '-m', 'PyInstaller',
         '--clean',
         '--noconfirm',
-        '--name', 'PeakDeskSprite',
+        '--name', 'CodexPetLive',
         '--distpath', $distRoot,
         '--workpath', $buildRoot,
         '--specpath', $specRoot,

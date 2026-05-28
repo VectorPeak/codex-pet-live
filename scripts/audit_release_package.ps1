@@ -101,7 +101,7 @@ try {
     }
 
     $normalizedRelativePaths = @($relativePaths | ForEach-Object { $_ -replace '/', '\' })
-    Assert-RequiredRelativePath -RelativePaths $normalizedRelativePaths -RequiredPath 'PeakDeskSprite.exe'
+    Assert-RequiredRelativePath -RelativePaths $normalizedRelativePaths -RequiredPath 'CodexPetLive.exe'
     Assert-RequiredRelativePath -RelativePaths $normalizedRelativePaths -RequiredPath 'res\icons'
     Assert-RequiredRelativePath -RelativePaths $normalizedRelativePaths -RequiredPath 'res\role'
     Assert-RequiredRelativePath -RelativePaths $normalizedRelativePaths -RequiredPath 'res\language'

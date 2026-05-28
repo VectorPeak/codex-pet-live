@@ -6,15 +6,15 @@ This file records the current import-level dependency map. It is a working refer
 
 ```text
 entry/bootstrap
-  PeakDeskSprite/__main__.py
-    -> PeakDeskSprite.PeakDeskSprite
-    -> PeakDeskSprite.Notification
-    -> PeakDeskSprite.Accessory
-    -> PeakDeskSprite.SpriteSettings.SpriteControlPanel
-    -> PeakDeskSprite.Dashboard.DashboardUI
+  CodexPetLive/__main__.py
+    -> CodexPetLive.CodexPetLive
+    -> CodexPetLive.Notification
+    -> CodexPetLive.Accessory
+    -> CodexPetLive.SpriteSettings.SpriteControlPanel
+    -> CodexPetLive.Dashboard.DashboardUI
 
 core runtime
-  PeakDeskSprite.PeakDeskSprite
+  CodexPetLive.CodexPetLive
     -> settings, conf, modules, bubbleManager, Accessory, runtime_paths, widgets
   Accessory
     -> settings, conf, utils, custom_widgets
@@ -67,16 +67,16 @@ resources/tools
 - `Dashboard/dashboard_widgets.py -> SpriteSettings/custom_utils.py` is a UI subpackage depending on another UI subpackage. Shared widgets should eventually move to a common UI package.
 - `llm_client.py -> settings.py` makes the service layer depend on global state. A future client should accept explicit config and path arguments.
 - Multiple modules directly compose `res/...` paths. A future `resource_paths.py` should become the only resource path API.
-- `PeakDeskSprite.py`, `Accessory.py`, `Notification.py`, and `modules.py` mix Qt presentation, runtime state, and animation behavior. Rename only after tests are stable.
+- `CodexPetLive.py`, `Accessory.py`, `Notification.py`, and `modules.py` mix Qt presentation, runtime state, and animation behavior. Rename only after tests are stable.
 
 ## High Fan-In Global Modules
 
 These modules are widely imported or referenced and should remain compatibility shims during migration:
 
-- `PeakDeskSprite.settings`
-- `PeakDeskSprite.conf`
-- `PeakDeskSprite.utils`
-- `PeakDeskSprite.runtime_paths`
+- `CodexPetLive.settings`
+- `CodexPetLive.conf`
+- `CodexPetLive.utils`
+- `CodexPetLive.runtime_paths`
 
 ## Refactor Rule
 

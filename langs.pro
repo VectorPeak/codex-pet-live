@@ -1,24 +1,24 @@
-SOURCES += PeakDeskSprite/SpriteSettings/SpriteControlPanel.py \
-        PeakDeskSprite/SpriteSettings/BasicSettingUI.py \
-        PeakDeskSprite/SpriteSettings/CharCardUI.py \
-        PeakDeskSprite/SpriteSettings/GameSaveUI.py \
-        PeakDeskSprite/SpriteSettings/ItemCardUI.py \
-        PeakDeskSprite/SpriteSettings/custom_base.py \
-        PeakDeskSprite/SpriteSettings/custom_utils.py \
-        PeakDeskSprite/Accessory.py \
-        PeakDeskSprite/PeakDeskSprite.py \
-        PeakDeskSprite/modules.py \
-        PeakDeskSprite/extra_windows.py \
-        PeakDeskSprite/Notification.py \
-        PeakDeskSprite/Dashboard/DashboardUI.py \
-        PeakDeskSprite/Dashboard/animationUI.py \
-        PeakDeskSprite/Dashboard/buffModule.py \
-        PeakDeskSprite/Dashboard/dashboard_widgets.py \
-        PeakDeskSprite/Dashboard/inventoryUI.py \
-        PeakDeskSprite/Dashboard/shopUI.py \
-        PeakDeskSprite/Dashboard/statusUI.py \
-        PeakDeskSprite/Dashboard/taskUI.py \
-        PeakDeskSprite/Dashboard/animDesignUI.py \
+SOURCES += CodexPetLive/SpriteSettings/SpriteControlPanel.py \
+        CodexPetLive/SpriteSettings/BasicSettingUI.py \
+        CodexPetLive/SpriteSettings/CharCardUI.py \
+        CodexPetLive/SpriteSettings/GameSaveUI.py \
+        CodexPetLive/SpriteSettings/ItemCardUI.py \
+        CodexPetLive/SpriteSettings/custom_base.py \
+        CodexPetLive/SpriteSettings/custom_utils.py \
+        CodexPetLive/Accessory.py \
+        CodexPetLive/CodexPetLive.py \
+        CodexPetLive/modules.py \
+        CodexPetLive/extra_windows.py \
+        CodexPetLive/Notification.py \
+        CodexPetLive/Dashboard/DashboardUI.py \
+        CodexPetLive/Dashboard/animationUI.py \
+        CodexPetLive/Dashboard/buffModule.py \
+        CodexPetLive/Dashboard/dashboard_widgets.py \
+        CodexPetLive/Dashboard/inventoryUI.py \
+        CodexPetLive/Dashboard/shopUI.py \
+        CodexPetLive/Dashboard/statusUI.py \
+        CodexPetLive/Dashboard/taskUI.py \
+        CodexPetLive/Dashboard/animDesignUI.py \
 
 
 

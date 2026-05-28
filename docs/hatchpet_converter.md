@@ -1,6 +1,6 @@
 # Hatch-Pet Converter
 
-This project can convert a Codex hatch-pet package into a PeakDeskSprite role module.
+This project can convert a Codex hatch-pet package into a CodexPetLive role module.
 
 ## Input
 
@@ -28,7 +28,7 @@ python tools\hatchpet_to_peakdesk.py convert `
   --overwrite
 ```
 
-Then validate the generated PeakDeskSprite role:
+Then validate the generated CodexPetLive role:
 
 ```powershell
 python tools\hatchpet_to_peakdesk.py validate res\role\BestFriendsCodex
@@ -54,7 +54,7 @@ python tools\hatchpet_to_peakdesk.py convert `
 
 ## Output
 
-The converter writes a PeakDeskSprite role folder:
+The converter writes a CodexPetLive role folder:
 
 ```text
 res/role/BestFriendsCodex/
@@ -73,7 +73,7 @@ res/role/BestFriendsCodex/
 
 The default mapping is:
 
-| Hatch-pet state | PeakDeskSprite action |
+| Hatch-pet state | CodexPetLive action |
 | --- | --- |
 | idle | default / stand |
 | running-right | right_walk |

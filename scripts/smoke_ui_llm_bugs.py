@@ -10,24 +10,25 @@ if ROOT not in sys.path:
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 _SMOKE_CONFIG_DIR = tempfile.TemporaryDirectory()
-os.environ["PEAKDESKSPRITE_CONFIG_DIR"] = _SMOKE_CONFIG_DIR.name
+os.environ["CODEXPETLIVE_CONFIG_DIR"] = _SMOKE_CONFIG_DIR.name
+os.environ.pop("PEAKDESKSPRITE_CONFIG_DIR", None)
 
 from PySide6.QtCore import QObject, QTimer, Signal
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication
 from PySide6.QtWidgets import QWidget
 
-import PeakDeskSprite.settings as settings
+import CodexPetLive.settings as settings
 
 settings.BASEDIR = ROOT
 settings.basedir = ROOT
 settings.init()
 
-import PeakDeskSprite.Notification as notification_module
-from PeakDeskSprite.Notification import SpriteNote
-from PeakDeskSprite.SpriteSettings.LLMProviderUI import sanitize_provider_error
-from PeakDeskSprite.bubbleManager import BubbleManager
-from PeakDeskSprite.llm_client import LLMConfigError, LLMRequestError
+import CodexPetLive.Notification as notification_module
+from CodexPetLive.Notification import SpriteNote
+from CodexPetLive.SpriteSettings.LLMProviderUI import sanitize_provider_error
+from CodexPetLive.bubbleManager import BubbleManager
+from CodexPetLive.llm_client import LLMConfigError, LLMRequestError
 
 
 def require(condition, message):

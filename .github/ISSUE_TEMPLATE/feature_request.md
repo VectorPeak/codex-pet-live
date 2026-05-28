@@ -12,7 +12,7 @@ assignees: ""
 
 ## 期望方案
 
-请描述希望 PeakDeskSprite 增加或调整什么行为、界面或配置。
+请描述希望 CodexPetLive 增加或调整什么行为、界面或配置。
 
 ## 替代方案
 

@@ -1,14 +1,14 @@
 <h1 align="center">
-  PeakDeskSprite
+  CodexPetLive
 </h1>
 
 <p align="center">
-  PeakDeskSprite is a PySide6-based Desktop Cyber Pet Framework, providing an App for all desktop pet creators
+  Codex-generated pets should not stay as asset packages; CodexPetLive brings hatch-pet packages to life as interactive Windows desktop pets
 </p>
 
 <p align="center">
   <a>
-    <img src="https://img.shields.io/github/license/VectorPeak/PeakDeskSprite.svg">
+    <img src="https://img.shields.io/github/license/VectorPeak/CodexPetLive.svg">
   </a>
 
   <a style="text-decoration:none">
@@ -16,7 +16,7 @@
   </a>
 
   <a style="text-decoration:none">
-    <img src="https://img.shields.io/badge/PeakDeskSprite-v0.8.5-green.svg"/>
+    <img src="https://img.shields.io/badge/CodexPetLive-v0.8.5-green.svg"/>
   </a>
 </p>
 
@@ -26,7 +26,7 @@ English | <a href="README.md">简体中文</a>
 
 :octocat: The project is at the very early stage, and mostly maintained in Chinese. Please leave an issue here if you have any suggestion, question, or trouble using it.  
   
-:new: **05-19-2026: [v0.8.5](https://github.com/VectorPeak/PeakDeskSprite/releases/tag/v0.8.5)** is the latest release. The Windows package is `PeakDeskSprite-v0.8.5-windows-x64.zip`. Any feedback is welcome! The LLM module is not fully open-sourced yet
+:new: **05-19-2026: [v0.8.5](https://github.com/VectorPeak/CodexPetLive/releases/tag/v0.8.5)** is the latest release. This version was published before the repository rename, so the Windows package is still named `PeakDeskSprite-v0.8.5-windows-x64.zip`. Any feedback is welcome! The LLM module is not fully open-sourced yet
   
 :new: **04-06-2024: v0.3.7** has been adapted to PySide6-Fluent-Widgets v1.5.4, Please update PySide6-Fluent-Widgets with pip to run PeakDeskSprite.
   
@@ -75,7 +75,7 @@ English | <a href="README.md">简体中文</a>
 ## Quick Start
 
 ### Windows Users
-Download `PeakDeskSprite-v0.8.5-windows-x64.zip` from [PeakDeskSprite v0.8.5](https://github.com/VectorPeak/PeakDeskSprite/releases/tag/v0.8.5), unzip it, and double-click **``PeakDeskSprite.exe``**. SHA256: `613A454DADBED6F0ADD48A1C2ABAE22D552CE2EC9C0CA81BDA59478402B958F9`
+Download `PeakDeskSprite-v0.8.5-windows-x64.zip` from [CodexPetLive v0.8.5](https://github.com/VectorPeak/CodexPetLive/releases/tag/v0.8.5), unzip it, and double-click **``PeakDeskSprite.exe``**. SHA256: `613A454DADBED6F0ADD48A1C2ABAE22D552CE2EC9C0CA81BDA59478402B958F9`
 
 Maintainers can build the Windows package with the [Windows release checklist](docs/release_checklist.md)
 

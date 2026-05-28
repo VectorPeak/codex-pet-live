@@ -90,7 +90,7 @@ if ($Version -ne $appVersion) {
 }
 
 $safeVersion = $Version -replace '[^A-Za-z0-9_.-]', '-'
-$zipPath = Join-Path $releaseRoot "PeakDeskSprite-$safeVersion-windows-x64.zip"
+$zipPath = Join-Path $releaseRoot "CodexPetLive-$safeVersion-windows-x64.zip"
 
 if (-not $SkipBuild) {
     Write-Step 'Cleaning release-work output directories'

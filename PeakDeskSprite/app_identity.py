@@ -3,7 +3,7 @@ import os
 
 DEFAULT_APP_NAME = "PeakDeskSprite"
 DEFAULT_ENV_PREFIX = "PEAKDESKSPRITE"
-DEFAULT_PROJECT_REPOSITORY = "VectorPeak/PeakDeskSprite"
+DEFAULT_PROJECT_REPOSITORY = "VectorPeak/CodexPetLive"
 
 
 def _env_name(key, prefix=None):

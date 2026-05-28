@@ -20,9 +20,9 @@ assignees: ""
 
 - Windows 版本：
 - Python 版本：
-- PeakDeskSprite 版本或提交：
+- CodexPetLive 版本或提交：
 - 安装方式：Release / 源码运行 / 其他
-- 运行命令：`python run_PeakDeskSprite.py`
+- 运行命令：`python -m PeakDeskSprite`
 
 ## 实际结果
 

@@ -1,4 +1,4 @@
-# PeakDeskSprite Windows Release Checklist
+# CodexPetLive Windows Release Checklist
 
 ## 目标
 
@@ -6,7 +6,7 @@
 
 项目只保留一个 `requirements.txt`。它同时服务源码运行和 Windows release 构建，并且是经过发布流程接受的版本范围，不是 `pip freeze`，因此不假造某台机器上的精确安装结果。
 
-输出位置固定为 `release-work\dist`，最终压缩包按版本命名为 `release-work\PeakDeskSprite-$Version-windows-x64.zip`。`release-work/` 是构建产物目录，不进入 Git。
+输出位置固定为 `release-work\dist`，最终压缩包按版本命名为 `release-work\CodexPetLive-$Version-windows-x64.zip`。`release-work/` 是构建产物目录，不进入 Git。
 
 ## Release Python 环境
 
@@ -42,14 +42,14 @@ $PythonPath = 'C:\Path\To\Python\python.exe'
 2. 使用 `python -m PyInstaller --clean --noconfirm` 构建 `PeakDeskSprite/__main__.py`。
 3. 将 PyInstaller 输出写入 `release-work\dist\PeakDeskSprite`。
 4. 审计未压缩发布目录。
-5. 压缩为 `release-work\PeakDeskSprite-$Version-windows-x64.zip`。
+5. 压缩为 `release-work\CodexPetLive-$Version-windows-x64.zip`。
 6. 审计 zip 包。
 
 如只想重新审计已有包：
 
 ```powershell
 .\scripts\audit_release_package.ps1 -PackagePath .\release-work\dist\PeakDeskSprite
-.\scripts\audit_release_package.ps1 -PackagePath .\release-work\PeakDeskSprite-$Version-windows-x64.zip
+.\scripts\audit_release_package.ps1 -PackagePath .\release-work\CodexPetLive-$Version-windows-x64.zip
 ```
 
 如只想复用已有 PyInstaller 输出并重新打包，可先确认 `release-work\dist\PeakDeskSprite` 存在，再执行：
@@ -78,7 +78,7 @@ release 包不允许包含：
 ## 预期产物
 
 - `release-work\dist\PeakDeskSprite\PeakDeskSprite.exe`
-- `release-work\PeakDeskSprite-$Version-windows-x64.zip`
+- `release-work\CodexPetLive-$Version-windows-x64.zip`
 
 `data` 属于用户运行态配置目录，不应进入发布包。LLM 服务商地址、模型名、API Key 和聊天记录也不应进入发布包。
 
@@ -113,14 +113,14 @@ git rev-parse "$Version^{commit}"
 `git rev-parse HEAD` 与 `git rev-parse "$Version^{commit}"` 必须一致；如果 tag 还未创建，应在最终提交确定后再创建并推送：
 
 ```powershell
-git tag -a $Version -m "PeakDeskSprite $Version"
+git tag -a $Version -m "CodexPetLive $Version"
 git push origin $Version
 ```
 
 构建完成后复核 zip 存在、内容可审计，并生成 SHA256 摘要：
 
 ```powershell
-$ZipPath = ".\release-work\PeakDeskSprite-$Version-windows-x64.zip"
+$ZipPath = ".\release-work\CodexPetLive-$Version-windows-x64.zip"
 Test-Path $ZipPath
 .\scripts\audit_release_package.ps1 -PackagePath $ZipPath
 Get-FileHash -Algorithm SHA256 $ZipPath

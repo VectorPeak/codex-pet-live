@@ -26,7 +26,7 @@ English | <a href="README.md">简体中文</a>
 
 :octocat: The project is at the very early stage, and mostly maintained in Chinese. Please leave an issue here if you have any suggestion, question, or trouble using it.  
   
-:new: **05-19-2026: v0.8.5** is the current public version tag. GitHub Release assets may be unavailable while the Windows packaging flow is being refreshed. Any feedback is welcome! The LLM module is not fully open-sourced yet
+:new: **05-19-2026: [v0.8.5](https://github.com/VectorPeak/PeakDeskSprite/releases/tag/v0.8.5)** is the latest release. The Windows package is `PeakDeskSprite-v0.8.5-windows-x64.zip`. Any feedback is welcome! The LLM module is not fully open-sourced yet
   
 :new: **04-06-2024: v0.3.7** has been adapted to PySide6-Fluent-Widgets v1.5.4, Please update PySide6-Fluent-Widgets with pip to run PeakDeskSprite.
   
@@ -58,11 +58,22 @@ English | <a href="README.md">简体中文</a>
 ## Quick Start
 
 ### Windows Users
-If [Releases](https://github.com/VectorPeak/PeakDeskSprite/releases) provides a Windows package, download `PeakDeskSprite-vX.Y.Z-windows-x64.zip`, unzip it, and double-click **``PeakDeskSprite.exe``**. If no release asset is available, run from source. Maintainers can build the Windows package with the [Windows release checklist](docs/release_checklist.md)
+Download `PeakDeskSprite-v0.8.5-windows-x64.zip` from [PeakDeskSprite v0.8.5](https://github.com/VectorPeak/PeakDeskSprite/releases/tag/v0.8.5), unzip it, and double-click **``PeakDeskSprite.exe``**. SHA256: `613A454DADBED6F0ADD48A1C2ABAE22D552CE2EC9C0CA81BDA59478402B958F9`
+
+Maintainers can build the Windows package with the [Windows release checklist](docs/release_checklist.md)
 
 ### Run From Source
 
 Use Python 3.12 by default. If PySide6 / Qt DLL compatibility is unstable on your machine, Python 3.9 can still be used for source verification
+
+```powershell
+conda create --name PeakDeskSprite_pyside python=3.12 -y
+conda activate PeakDeskSprite_pyside
+python -m pip install -r requirements.txt
+python -m PeakDeskSprite
+```
+
+Or use a Python 3.12 virtual environment:
 
 ```powershell
 py -3.12 -m venv .venv
